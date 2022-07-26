@@ -78,7 +78,7 @@ def main():
                 )
 
                 img_array = np.array(image_file)
-                img = tf.image.resize(img_array, size=(256,256))
+                img = tf.image.resize(img_array, size=(256,256,3))
                 img = tf.expand_dims(img, axis=0)
             
             with col2:
@@ -90,7 +90,7 @@ def main():
                 new_model = load_model('tb_detection_model.h5')
                 # Image classification with model
                 img_array = np.array(image_file)
-                img = tf.image.resize(img_array, size=(256,256))
+                img = tf.image.resize(img_array, size=(256,256,3))
                 img = tf.expand_dims(img, axis=0)
                 y_hat = new_model.predict(img)
                 
