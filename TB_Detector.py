@@ -84,7 +84,7 @@ def main():
                 image_file.seek(0)
                 st.subheader('Detection space')
                 
-                st.write(classification_machine(image_file)        
+                st.write(classification_machine(image_file))        
     else:
         choice == 'About'
     
