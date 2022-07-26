@@ -1,18 +1,13 @@
 import pandas as pd
 import numpy as np
-import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
 from PIL import Image # Load images
-import os#, cv2
+import cv2 #os
 
-#import tensorflow as tf
-#from tensorflow import keras
+import tensorflow as tf
+from tensorflow import keras
 
-
-#import plotly.express as px
-#import time
-#import copy
 
 
 # Folders path
