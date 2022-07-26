@@ -48,10 +48,10 @@ def main():
             image_file = Image.open(file)
             
             # retrieve image details
-            st.write(type(image_file))
+            st.write(type(file))
             # Methods and attributes on the class
-            file_details = {'file name':image_file.name,
-            'file type': image_file.type, 'file size':image_file.size}
+            file_details = {'file name':file.name,
+            'file type': file.type, 'file size':file.size}
             # Display details on screen
             st.write(file_details)
             
