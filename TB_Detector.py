@@ -8,8 +8,10 @@ import cv2 #os
 import tensorflow as tf
 from tensorflow import keras
 
+from keras.models import load_model
 
-#vid = cv2.imread(os.path.join(vid_dir,'resources', 'Header image v2.mp4'))
+# Load model
+new_model = load_model('tb_detection_model.h5')
 
 
 video_file = open('Header image.mp4', 'rb')
@@ -59,7 +61,7 @@ def main():
                 # resize the image
                 resized_img = tf.image.resize(image_file, (256,256))
                 # make a prediction
-                yhat = model.predict(np.expand_dims(resized_img/255, 0))
+                yhat = new_model.predict(np.expand_dims(resized_img/255, 0))
                 
                 if yhat > 0.5:
                   st.write('Predicted class is TB')
