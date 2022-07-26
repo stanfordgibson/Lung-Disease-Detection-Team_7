@@ -61,12 +61,13 @@ def main():
                     caption=file.name, #f"You amazing image has shape",
                     use_column_width=True,
                 )
+                st.write('1',img.shape)
 
                 img_array = np.array(image_file)
                 img = tf.image.resize(img_array, [256,256])
-                st.write(img.shape)
+                st.write('2',img.shape)
                 img = tf.expand_dims(img, axis=0)
-                st.write(img.shape)
+                st.write('3',img.shape)
             
             with col2:
                 # Reset cursor for Upload NoneType
