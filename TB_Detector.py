@@ -82,17 +82,10 @@ def main():
                 img = tf.expand_dims(img, axis=0)
                 y_hat = new_model.predict(img)
                 
-                st.write(y_hat)
-                
-                #if yhat > 0.5:
-                  #prediction = 'Predicted class is TB'
-                #else:
-                  #prediction = 'Predicted class is Normal'
-      
-    #return prediction
-                
-                
-                #classification_machine(image_file)       
+                if yhat > 0.5:
+                  st.write('Predicted class is TB')
+                else:
+                  st.write('Predicted class is Normal')    
     else:
         choice == 'About'
     
