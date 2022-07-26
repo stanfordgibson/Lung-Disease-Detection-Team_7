@@ -61,9 +61,10 @@ def main():
                     caption=file.name, #f"You amazing image has shape",
                     use_column_width=True,
                 )
-                st.write('1',image_file.shape)
+                
 
                 img_array = np.array(image_file)
+                st.write('1',img_array.shape)
                 img = tf.image.resize(img_array, [256,256])
                 st.write('2',img.shape)
                 img = tf.expand_dims(img, axis=0)
