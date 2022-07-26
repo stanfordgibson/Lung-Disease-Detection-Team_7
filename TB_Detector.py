@@ -30,12 +30,14 @@ def classification_machine(image_file):
     # Image classification with model
     y_hat = new_model.predict(np.expand_dims(image_file/255,0))
     
-    if yhat > 0.5:
-      prediction = 'Predicted class is TB'
-    else:
-      prediction = 'Predicted class is Normal'
+    st.write(y_hat)
+    
+    #if yhat > 0.5:
+      #prediction = 'Predicted class is TB'
+    #else:
+      #prediction = 'Predicted class is Normal'
       
-    return prediction
+    #return prediction
 
 
 def main():
@@ -84,7 +86,7 @@ def main():
                 image_file.seek(0)
                 st.subheader('Detection space')
                 
-                st.write(classification_machine(image_file))        
+                classification_machine(image_file)       
     else:
         choice == 'About'
     
