@@ -9,12 +9,6 @@ import tensorflow as tf
 from tensorflow import keras
 
 
-
-# Folders path
-vid_dir = 'C:\\Users\\Stanford\\Lung-Disease-Detection-Team_7\\resources'
-# List the folders in the path
-os.listdir(vid_dir)
-
 #vid = cv2.imread(os.path.join(vid_dir,'resources', 'Header image v2.mp4'))
 
 
