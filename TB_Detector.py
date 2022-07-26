@@ -64,12 +64,12 @@ def main():
                 #st.image(load_image(image_file), width=255)
                 
                 st.image(
-                    image,
+                    image_file,
                     caption=f"You amazing image has shape",
                     use_column_width=True,
                 )
 
-                img_array = np.array(image)
+                img_array = np.array(image_file)
                 img = tf.image.resize(img_array, size=(224,224))
                 img = tf.expand_dims(img, axis=0)
             
