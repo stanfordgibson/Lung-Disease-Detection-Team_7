@@ -10,8 +10,7 @@ from tensorflow import keras
 
 from keras.models import load_model
 
-# Load model
-new_model = load_model('tb_detection_model.h5')
+
 
 
 video_file = open('Header image.mp4', 'rb')
@@ -24,6 +23,14 @@ st.video(video_bytes)
 def load_image(image_file):
     img = Image.open(image_file)
     return img
+"""    
+def classification_machine(image_file):
+    # Load model
+    new_model = load_model('tb_detection_model.h5')
+    # Input shape
+    shape = ((256, 256, 3))
+    tf.keras.Sequential
+"""
 
 def main():
     # set the title
@@ -59,9 +66,11 @@ def main():
                 st.header('Detection space')
                 
                 # resize the image
-                resized_img = tf.image.resize(image_file, (256,256))
+                resized_img = image_file.resize(256,256)
+                keras.preprocessing.image.img_to_array(resized_img)
+                resized_img = np.expand_dims(resized_img, axis=0)
                 # make a prediction
-                yhat = new_model.predict(np.expand_dims(resized_img/255, 0))
+                yhat = new_model.predict(resized_img)   #(np.expand_dims(resized_img/255, 0))
                 
                 if yhat > 0.5:
                   st.write('Predicted class is TB')
