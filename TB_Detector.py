@@ -23,21 +23,6 @@ st.video(video_bytes)
 def load_image(image_file):
     img = Image.open(image_file)
     return img
-  
-#def classification_machine(image_file):
-    # Load model
-    #new_model = load_model('tb_detection_model.h5')
-    # Image classification with model
-    #y_hat = new_model.predict(np.expand_dims(image_file/255,0))
-    
-    #st.write(y_hat)
-    
-    #if yhat > 0.5:
-      #prediction = 'Predicted class is TB'
-    #else:
-      #prediction = 'Predicted class is Normal'
-      
-    #return prediction
 
 
 def main():
@@ -78,8 +63,10 @@ def main():
                 )
 
                 img_array = np.array(image_file)
-                img = tf.image.resize(img_array, size=(256,256,3))
+                img = tf.image.resize(img_array, [256,256])
+                st.write(img.shape)
                 img = tf.expand_dims(img, axis=0)
+                st.write(img.shape)
             
             with col2:
                 # Reset cursor for Upload NoneType
@@ -90,7 +77,8 @@ def main():
                 new_model = load_model('tb_detection_model.h5')
                 # Image classification with model
                 img_array = np.array(image_file)
-                img = tf.image.resize(img_array, size=(256,256,3))
+                img = tf.image.resize(img_array, [256,256])
+                #img = tf.image.resize(img_array, size=(256,256,3))
                 img = tf.expand_dims(img, axis=0)
                 y_hat = new_model.predict(img)
                 
