@@ -64,7 +64,7 @@ def main():
             
             with col2:
                 # Reset cursor for Upload NoneType
-                uploaded_file.seek(0)
+                image_file.seek(0)
                 st.header('Detection space')
                 
                 # resize the image
