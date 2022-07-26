@@ -82,7 +82,7 @@ def main():
                 img = tf.expand_dims(img, axis=0)
                 y_hat = new_model.predict(img)
                 
-                if yhat > 0.5:
+                if y_hat > 0.5:
                   st.write('Predicted class is TB')
                 else:
                   st.write('Predicted class is Normal')    
