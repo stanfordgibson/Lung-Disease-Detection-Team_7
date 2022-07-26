@@ -23,14 +23,20 @@ st.video(video_bytes)
 def load_image(image_file):
     img = Image.open(image_file)
     return img
-"""    
+  
 def classification_machine(image_file):
     # Load model
     new_model = load_model('tb_detection_model.h5')
-    # Input shape
-    shape = ((256, 256, 3))
-    tf.keras.Sequential
-"""
+    # Image classification with model
+    y_hat = new_model.predict(np.expand_dims(image_file/255,0))
+    
+    if yhat > 0.5:
+      prediction = 'Predicted class is TB'
+    else:
+      prediction = 'Predicted class is Normal'
+      
+    return prediction
+
 
 def main():
     # set the title
@@ -40,7 +46,7 @@ def main():
     choice = st.sidebar.selectbox('Menu', menu)
     
     if choice == 'Home':
-        st.subheader('TB Detection')
+        #st.subheader('TB Detection')
         file = st.file_uploader('Upload Chest X-ray', type=['png','jpg','jpeg'])
         
         if file is not None:
@@ -60,37 +66,25 @@ def main():
             
             with col1:
                 # Display the image
-                st.header('Original X-ray')
+                st.subheader('Original X-ray')
                 #st.image(load_image(image_file), width=255)
                 
                 st.image(
                     image_file,
-                    caption=f"You amazing image has shape",
+                    caption=file.name #f"You amazing image has shape",
                     use_column_width=True,
                 )
 
                 img_array = np.array(image_file)
-                img = tf.image.resize(img_array, size=(224,224))
+                img = tf.image.resize(img_array, size=(256,256))
                 img = tf.expand_dims(img, axis=0)
             
             with col2:
                 # Reset cursor for Upload NoneType
                 image_file.seek(0)
-                st.header('Detection space')
+                st.subheader('Detection space')
                 
-                # resize the image
-                #resized_img = image_file.resize(256,256)
-                #keras.preprocessing.image.img_to_array(resized_img)
-                #resized_img = np.expand_dims(resized_img, axis=0)
-                # make a prediction
-                #yhat = new_model.predict(resized_img)   #(np.expand_dims(resized_img/255, 0))
-                
-                #if yhat > 0.5:
-                  #st.write('Predicted class is TB')
-                #else:
-                  #st.write('Predicted class is Normal')
-
-        
+                st.write(classification_machine(image_file)        
     else:
         choice == 'About'
     
