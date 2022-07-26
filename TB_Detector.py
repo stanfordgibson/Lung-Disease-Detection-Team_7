@@ -71,7 +71,7 @@ def main():
                 
                 st.image(
                     image_file,
-                    caption=file.name #f"You amazing image has shape",
+                    caption=file.name, #f"You amazing image has shape",
                     use_column_width=True,
                 )
 
