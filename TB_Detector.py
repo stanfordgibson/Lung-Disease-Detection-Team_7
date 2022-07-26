@@ -41,14 +41,15 @@ def main():
     
     if choice == 'Home':
         st.subheader('TB Detection')
-        image_file = st.file_uploader('Upload Chest X-ray', type=['png','jpg','jpeg'])
+        file = st.file_uploader('Upload Chest X-ray', type=['png','jpg','jpeg'])
         
-        if image_file is not None:
+        if file is not None:
+            
+            image_file = Image.open(file)
             
             # retrieve image details
             st.write(type(image_file))
             # Methods and attributes on the class
-            #st.write(dir(image_file))
             file_details = {'file name':image_file.name,
             'file type': image_file.type, 'file size':image_file.size}
             # Display details on screen
@@ -60,7 +61,17 @@ def main():
             with col1:
                 # Display the image
                 st.header('Original X-ray')
-                st.image(load_image(image_file), width=255)
+                #st.image(load_image(image_file), width=255)
+                
+                st.image(
+                    image,
+                    caption=f"You amazing image has shape",
+                    use_column_width=True,
+                )
+
+                img_array = np.array(image)
+                img = tf.image.resize(img_array, size=(224,224))
+                img = tf.expand_dims(img, axis=0)
             
             with col2:
                 # Reset cursor for Upload NoneType
@@ -68,16 +79,16 @@ def main():
                 st.header('Detection space')
                 
                 # resize the image
-                resized_img = image_file.resize(256,256)
-                keras.preprocessing.image.img_to_array(resized_img)
-                resized_img = np.expand_dims(resized_img, axis=0)
+                #resized_img = image_file.resize(256,256)
+                #keras.preprocessing.image.img_to_array(resized_img)
+                #resized_img = np.expand_dims(resized_img, axis=0)
                 # make a prediction
-                yhat = new_model.predict(resized_img)   #(np.expand_dims(resized_img/255, 0))
+                #yhat = new_model.predict(resized_img)   #(np.expand_dims(resized_img/255, 0))
                 
-                if yhat > 0.5:
-                  st.write('Predicted class is TB')
-                else:
-                  st.write('Predicted class is Normal')
+                #if yhat > 0.5:
+                  #st.write('Predicted class is TB')
+                #else:
+                  #st.write('Predicted class is Normal')
 
         
     else:
@@ -85,7 +96,6 @@ def main():
     
 if __name__ == '__main__':
     main()
-
 
 
 
