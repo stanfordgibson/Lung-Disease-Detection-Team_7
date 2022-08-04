@@ -17,6 +17,7 @@ video_file = open('cAD_DETECTION.gif', 'rb')
 video_bytes = video_file.read()
 st.video(video_bytes)
 
+st.markdown("![Alt Text]('cAD_DETECTION.gif')")
 
 # Load images
 @st.cache
