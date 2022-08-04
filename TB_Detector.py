@@ -13,7 +13,7 @@ from keras.models import load_model
 
 
 
-video_file = open('Header_image_Final.mp4', 'rb')
+video_file = open('cAD_DETECTION.gif', 'rb')
 video_bytes = video_file.read()
 st.video(video_bytes)
 
