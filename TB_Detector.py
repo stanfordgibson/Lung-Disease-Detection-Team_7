@@ -108,6 +108,9 @@ def main():
             st.subheader("Why this app")
             st.markdown("""To reduce the spread of TB among mining communities, their families, and the broader population, we must continue our efforts to screen, diagnose, and effectively treat miners for TB.\n\n
             This TB Detector App will assist medical practitioners with the detection and diagnosis tuberculosis.""")
+            
+            st.subheader('How to use the app')
+            st.markdown("""Navigate to the home screen, click on upload chest X-ray to upload a X-ray image.""")
     
 if __name__ == '__main__':
     main()
