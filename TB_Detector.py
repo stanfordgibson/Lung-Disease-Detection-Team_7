@@ -11,13 +11,18 @@ from tensorflow import keras
 from keras.models import load_model
 
 
+"""### gif from local file"""
+file_ = open('cAD_DETECTION.gif', 'rb')
+contents = file_.read()
+data_url = base64.b64encode(contents).decode("utf-8")
+file_.close()
 
 
-video_file = open('cAD_DETECTION.gif', 'rb')
-video_bytes = video_file.read()
-st.video(video_bytes)
+#video_file = open('cAD_DETECTION.gif', 'rb')
+#video_bytes = video_file.read()
+#st.video(video_bytes)
 
-st.markdown("![Alt Text](cAD_DETECTION.gif)")
+#st.markdown("![Alt Text](cAD_DETECTION.gif)")
 
 # Load images
 @st.cache
