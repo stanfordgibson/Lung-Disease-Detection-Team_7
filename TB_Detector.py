@@ -11,7 +11,7 @@ import base64
 from keras.models import load_model
 
 
-"""### gif from local file"""
+
 file_ = open('cAD_DETECTIONv2.gif', 'rb')
 contents = file_.read()
 data_url = base64.b64encode(contents).decode("utf-8")
@@ -100,9 +100,17 @@ def main():
                   st.write('Predicted class is Normal')    
     else:
         if choice == 'About':
-            st.write("""A potentially serious infectious bacterial disease that mainly affects the lungs.
-            The bacteria that cause TB are spread when an infected person coughs or sneezes. Most people infected with the bacteria that cause tuberculosis don't have symptoms. When symptoms do occur, they usually include a cough (sometimes blood-tinged), weight loss, night sweats and fever. 
-            Treatment isn't always required for those without symptoms. Patients with active symptoms will require a long course of treatment involving multiple antibiotics.""")
+            st.subheader("Tuberculosis (TB)")
+            st.markdown("""A potentially serious infectious bacterial disease that mainly affects the lungs.
+            
+            The bacteria that cause TB are spread when an infected person coughs or sneezes. 
+            
+            Most people infected with the bacteria that cause tuberculosis don't have symptoms. 
+            
+            When symptoms do occur, they usually include a cough (sometimes blood-tinged), weight loss, night sweats and fever. 
+            Treatment isn't always required for those without symptoms. 
+            
+            Patients with active symptoms will require a long course of treatment involving multiple antibiotics.""")
     
 if __name__ == '__main__':
     main()
