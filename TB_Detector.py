@@ -12,7 +12,7 @@ from keras.models import load_model
 
 
 """### gif from local file"""
-file_ = open('cAD_DETECTION.gif', 'rb')
+file_ = open('cAD_DETECTIONv2.gif', 'rb')
 contents = file_.read()
 data_url = base64.b64encode(contents).decode("utf-8")
 file_.close()
