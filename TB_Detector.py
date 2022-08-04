@@ -90,6 +90,11 @@ def main():
                   st.write('Predicted class is Normal')    
     else:
         choice == 'About'
+        
+        st.write("""A potentially serious infectious bacterial disease that mainly affects the lungs.
+The bacteria that cause TB are spread when an infected person coughs or sneezes.
+Most people infected with the bacteria that cause tuberculosis don't have symptoms. When symptoms do occur, they usually include a cough (sometimes blood-tinged), weight loss, night sweats and fever.
+Treatment isn't always required for those without symptoms. Patients with active symptoms will require a long course of treatment involving multiple antibiotics.""")
     
 if __name__ == '__main__':
     main()
