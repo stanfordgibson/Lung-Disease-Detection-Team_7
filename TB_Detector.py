@@ -101,14 +101,9 @@ def main():
     else:
         if choice == 'About':
             st.subheader("Tuberculosis (TB)")
-            st.markdown("""A potentially serious infectious bacterial disease that mainly affects the lungs. \n\nThe bacteria that cause TB are spread when an infected person coughs or sneezes. 
-            
-            Most people infected with the bacteria that cause tuberculosis don't have symptoms. 
-            
-            When symptoms do occur, they usually include a cough (sometimes blood-tinged), weight loss, night sweats and fever. 
-            Treatment isn't always required for those without symptoms. 
-            
-            Patients with active symptoms will require a long course of treatment involving multiple antibiotics.""")
+            st.markdown("""A potentially serious infectious bacterial disease that mainly affects the lungs. \n\nThe bacteria that cause TB are spread when an infected person coughs or sneezes.            
+            Most people infected with the bacteria that cause tuberculosis don't have symptoms. \n\nWhen symptoms do occur, they usually include a cough (sometimes blood-tinged), weight loss, night sweats and fever. 
+            \n\nTreatment isn't always required for those without symptoms. Patients with active symptoms will require a long course of treatment involving multiple antibiotics.""")
     
 if __name__ == '__main__':
     main()
