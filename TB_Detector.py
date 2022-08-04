@@ -37,7 +37,7 @@ def load_image(image_file):
 
 def main():
     # set the title
-    st.title("Tuberculosis (TB) Detector") 
+    #st.title("Tuberculosis (TB) Detector") 
     
     menu = ('Home', 'About')
     choice = st.sidebar.selectbox('Menu', menu)
