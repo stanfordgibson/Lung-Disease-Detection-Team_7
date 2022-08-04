@@ -64,11 +64,11 @@ def main():
                 
 
                 img_array = np.array(image_file)
-                st.write('1',img_array.shape)
+                #st.write('1',img_array.shape)
                 img = tf.image.resize(img_array, [256,256])
-                st.write('2',img.shape)
+                #st.write('2',img.shape)
                 img = tf.expand_dims(img, axis=0)
-                st.write('3',img.shape)
+                #st.write('3',img.shape)
             
             with col2:
                 # Reset cursor for Upload NoneType
