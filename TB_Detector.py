@@ -102,7 +102,7 @@ def main():
         if choice == 'About':
             st.subheader("Tuberculosis (TB)")
             st.markdown("""A potentially serious infectious bacterial disease that mainly affects the lungs. \n\nThe bacteria that cause TB are spread when an infected person coughs or sneezes.            
-            \n\nMost people infected with the bacteria that cause tuberculosis don't have symptoms. When symptoms do occur, they usually include: \n*a cough (sometimes blood-tinged), \n*weight loss, \n*night sweats and fever. 
+            \n\nMost people infected with the bacteria that cause tuberculosis don't have symptoms. When symptoms do occur, they usually include: \n\n - a cough (sometimes blood-tinged), \n - weight loss, \n - night sweats and fever. 
             \n\nTreatment isn't always required for those without symptoms. Patients with active symptoms will require a long course of treatment involving multiple antibiotics.""")
             
             st.subheader("Why this app")
