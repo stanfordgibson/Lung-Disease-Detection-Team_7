@@ -73,7 +73,7 @@ def main():
             with col2:
                 # Reset cursor for Upload NoneType
                 image_file.seek(0)
-                st.subheader('Detection space')
+                st.subheader('Detection response')
                 
                 # Load model
                 new_model = load_model('tb_detection_model.h5')
