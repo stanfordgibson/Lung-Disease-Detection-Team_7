@@ -106,7 +106,8 @@ def main():
             \n\nTreatment isn't always required for those without symptoms. Patients with active symptoms will require a long course of treatment involving multiple antibiotics.""")
             
             st.subheader("Why this app")
-            st.markdown("""To reduce the spread of TB among mining communities, their families, and the broader population, we must continue our efforts to screen, diagnose, and effectively treat miners for TB.""")
+            st.markdown("""To reduce the spread of TB among mining communities, their families, and the broader population, we must continue our efforts to screen, diagnose, and effectively treat miners for TB.\n\n
+            radiologists in the detection and diagnosis of lung disease..""")
     
 if __name__ == '__main__':
     main()
