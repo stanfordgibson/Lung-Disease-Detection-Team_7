@@ -17,6 +17,10 @@ contents = file_.read()
 data_url = base64.b64encode(contents).decode("utf-8")
 file_.close()
 
+st.markdown(
+    f'<img src="data:image/gif;base64,{data_url}" alt="TB Detection Logo">',
+    unsafe_allow_html=True,
+)
 
 #video_file = open('cAD_DETECTION.gif', 'rb')
 #video_bytes = video_file.read()
